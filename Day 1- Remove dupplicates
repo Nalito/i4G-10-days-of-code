@@ -1,0 +1,15 @@
+class Solution:
+    def removeDuplicates(self, nums):
+        num_set = []
+        
+        for i in nums:
+            if i not in num_set:
+                num_set.append(i)
+        
+        num_len = len(nums)
+        k = len(num_set)
+        for i in range(num_len):
+            nums[i] = nums[0]
+        for i in range(k):
+            nums[i] = num_set[i]
+        return k
